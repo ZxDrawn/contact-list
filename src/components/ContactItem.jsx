@@ -1,12 +1,14 @@
+import "./ContactItem.css";
+
 function ContactItem(){
     return(
-    <div>
-        <h2>contact.Nome</h2>
-        <p>(69) 9008-8976</p>
-        <p>email@gmail.com</p>
-        <div>
-        <button>Editar</button>
-        <button>Deletar</button>
+    <div className="contact-card">
+        <h2>Kaiky Vinícius Olivera Nascimento</h2>
+        <p>📱(69) 9 9223-0618</p>
+        <p>kaiky.vinicius0407@gmail.com</p>
+        <div className="btns">
+        <button className="btnEditar">Editar</button>
+        <button className="btnDeletar">Deletar</button>
         </div>
     </div>
 )
