@@ -1,19 +1,30 @@
 import './App.css'
-import ContactItem from './components/ContactItem';
+import { useEffect, useState } from "react";
+import ContactList from "./components/ContactList";
 
 function App() {
-  const contacts = [
-    {id: 1, name: "João", phone: "(69) 9887-4455", mail: " email@gmail.com"},
-    {id: 1, name: "João", phone: "(69) 9887-4456", mail: " email@gmail.com"},
-    {id: 1, name: "João", phone: "(69) 9887-4457", mail: " email@gmail.com"}
-  ];
-  return(
-    <div>
+  const [contacts, setContacts] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3001/contacts")
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        setContacts(data);
+      })
+      .catch(function (error) {
+        console.error("Erro ao buscar contatos:", error);
+      });
+  }, []);
+
+  return (
+    <div className="container">
       <h1>Agenda de Contatos</h1>
-      <ContactItem></ContactItem>
-      <ContactItem></ContactItem>
+      <ContactList contacts={contacts} />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
+
