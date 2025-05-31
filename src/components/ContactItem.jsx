@@ -1,18 +1,19 @@
 import "./ContactItem.css";
 
-function ContactItem({name, phone, email}){
-
-    return(
+function ContactItem({ name, phone, email, onDelete, id }) {
+  return (
     <div className="contact-card">
-        <h2>{name}</h2>
-        <p>📱{phone}</p>
-        <p>{email}</p>
-        <div className="btns">
+      <h2>{name}</h2>
+      <p>📱{phone}</p>
+      <p>{email}</p>
+      <div className="btns">
         <button className="btnEditar">Editar</button>
-        <button className="btnDeletar">Deletar</button>
-        </div>
+        <button className="btnDeletar" onClick={() => onDelete(id)}>
+          Deletar
+        </button>
+      </div>
     </div>
-)
+  );
 }
 
 export default ContactItem;

@@ -1,3 +1,55 @@
-.Form button{
-    
+.Form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.Form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.Form button {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Botão Adicionar */
+.Form button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.Form button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Botão Cancelar */
+.Form button[type="button"] {
+  background-color: #f44336;
+  color: white;
+}
+
+.Form button[type="button"]:hover {
+  background-color: #d32f2f;
+}
+
+/* Espaçamento entre os botões */
+.Form .button-group {
+  display: flex;
+  gap: 10px;
+}
+
+/* Alinhamento geral */
+.Form input,
+.Form .button-group {
+  width: 100%;
 }

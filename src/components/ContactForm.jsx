@@ -31,8 +31,10 @@ function ContactForm({onAdd, onClose}){
     <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Nome" required/>
     <input type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Fone" required/>
     <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="E-mail" required/>
+    <div className="button-group">
     <button type="submit">Adicionar</button>
     <button type="button" onClick={onClose}>Cancelar</button>
+    </div>
 </form>
 )
 }
