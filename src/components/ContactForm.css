@@ -22,9 +22,8 @@
   transition: background-color 0.3s;
 }
 
-/* Botão Adicionar */
 .Form button[type="submit"] {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
 }
 
@@ -32,7 +31,6 @@
   background-color: #45a049;
 }
 
-/* Botão Cancelar */
 .Form button[type="button"] {
   background-color: #f44336;
   color: white;
@@ -42,13 +40,11 @@
   background-color: #d32f2f;
 }
 
-/* Espaçamento entre os botões */
 .Form .button-group {
   display: flex;
   gap: 10px;
 }
 
-/* Alinhamento geral */
 .Form input,
 .Form .button-group {
   width: 100%;

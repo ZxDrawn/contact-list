@@ -6,6 +6,7 @@ import ContactForm from "./components/ContactForm";
 function App() {
   const [contacts, setContacts] = useState([]);
   const [showForm, setShowForm] = useState(false);
+  const [editingContact, setEditingContact] = useState(null);
 
   useEffect(() => {
     fetch("http://localhost:3001/contacts")
@@ -55,6 +56,29 @@ function App() {
       });
   }
 
+  function handleEdit(contact) {
+    setEditingContact(contact);
+  }
+
+  function updateContact(updatedContact) {
+    fetch(`http://localhost:3001/contacts/${updatedContact.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updatedContact),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        const updatedList = contacts.map((contact) =>
+          contact.id === data.id ? data : contact
+        );
+        setContacts(updatedList);
+        setEditingContact(null);
+      })
+      .catch((err) => console.error("Erro ao editar contato:", err));
+  }
+
   return (
     <div className="container">
       <h1>Agenda de Contatos</h1>
@@ -67,7 +91,18 @@ function App() {
       {showForm && (
         <ContactForm onAdd={addContact} onClose={() => setShowForm(false)} />
       )}
-      <ContactList contacts={contacts} onDelete={deleteContact} />
+      <ContactList
+        contacts={contacts}
+        onDelete={deleteContact}
+        onEdit={handleEdit}
+      />
+      {editingContact && (
+        <ContactForm
+          initialData={editingContact}
+          onAdd={updateContact}
+          onClose={() => setEditingContact(null)}
+        />
+      )}
     </div>
   );
 }

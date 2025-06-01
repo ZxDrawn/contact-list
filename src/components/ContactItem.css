@@ -1,44 +1,42 @@
-.contact-card{
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
-    padding: 20px;
-    background-color: rgba(0, 138, 138, 0.151);
-    border: 1px solid black;
-    border-radius: 8px;
-    margin: 50px 30px 1px 1px;
-    box-shadow: 0 2px 2px rgba(0, 0, 0);
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 20px;
+  background-color: rgba(0, 138, 138, 0.151);
+  border: 1px solid black;
+  border-radius: 8px;
+  margin: 50px 30px 1px 1px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0);
 }
 
-h1{
-    text-align: center;
+h1 {
+  text-align: center;
 }
 
-h2, p {
-    margin: 10px;
+h2,
+p {
+  margin: 10px;
 }
 
-.btns{
-    display: flex;
-    gap: 10px;
-    
+.btns {
+  display: flex;
+  gap: 10px;
 }
 
-.btns button{
-    border: none;
-    border-radius: 10px;
-    padding: 10px 10px;
-    cursor: pointer;
+.btns button {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 10px;
+  cursor: pointer;
 }
 
-.btnEditar{
-    background-color: rgb(26, 108, 216);
-    color: rgb(255, 255, 255);
-
+.btnEditar {
+  background-color: rgb(26, 108, 216);
+  color: rgb(255, 255, 255);
 }
 
-.btnDeletar{
-    background-color: rgb(189, 20, 20);
-    color: white;
+.btnDeletar {
+  background-color: rgb(189, 20, 20);
+  color: white;
 }
-
